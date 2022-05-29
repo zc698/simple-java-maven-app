@@ -1,6 +1,7 @@
 pipeline {
     agent {
             docker 'maven:3.3.3'
+            workingDir: '/home/jenkins/agent'
     }
         stages {
             stage('Build') {
