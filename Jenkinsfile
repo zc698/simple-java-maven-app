@@ -2,6 +2,9 @@ pipeline {
     agent any
     stages {
         stage('Build') {
+        docker {
+                    image 'maven:3-alpine'
+                }
             steps {
                 sh 'echo "Hello World"'
                 sh '''
