@@ -1,9 +1,13 @@
 pipeline {
-    agent any
+    agent none
+     agent {
+            docker {
+                image 'maven:3-alpine'
+            }
+        }
     stages {
         stage('Build') {
             steps {
-                docker image 'maven:3-alpine'
                 sh 'echo "Hello World"'
                 sh '''
                     echo "Multiline shell steps works too"
